@@ -20,7 +20,6 @@ RUN mkdir /home/tform/workspace
 COPY requirements.txt /home/tform/workspace/
 COPY credential_aws.txt /home/tform/.aws/credetials
 COPY config_aws.txt /home/tform/.aws/config_aws
-COPY 
 ADD ./tf_WordPress /home/tform/workspace/ 
 USER tform
 RUN chown -R tform /home/tform/workspace
