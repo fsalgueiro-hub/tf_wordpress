@@ -17,8 +17,8 @@ COPY tf_aws_ec2.yml /etc/ansible/inventory/
 # Create user and copy files
 RUN useradd -ms /bin/bash tform
 RUN mkdir /home/tform/workspace
-COPY credential_aws.txt /home/tform/.aws/credetials
-COPY config_aws.txt /home/tform/.aws/config_aws
+COPY credential_aws.txt /home/tform/.aws/credentials
+COPY config_aws.txt /home/tform/.aws/config
 ADD ./tf_WordPress /home/tform/workspace/ 
 RUN chown -R tform /home/tform/workspace
 RUN chown -R tform /home/tform/.aws
