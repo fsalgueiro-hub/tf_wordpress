@@ -20,9 +20,9 @@ RUN mkdir /home/tform/workspace
 COPY credential_aws.txt /home/tform/.aws/credetials
 COPY config_aws.txt /home/tform/.aws/config_aws
 ADD ./tf_WordPress /home/tform/workspace/ 
-USER tform
 RUN chown -R tform /home/tform/workspace
 RUN chown -R tform /home/tform/.aws
+USER tform
 WORKDIR /home/tform/workspace
 # Install awscli/ansible/boto3
 RUN pip3 install awscli --user
@@ -30,8 +30,6 @@ RUN pip3 install ansible --user
 RUN pip3 install boto3 --user
 # Create an SSH key
 RUN ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
-# Install ansible galaxy
-# RUN ansible-galaxy collection install amazon.aws
 
 
 
