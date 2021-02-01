@@ -38,4 +38,6 @@ You should now see the WordPress configuration page
 
 Once your are done, run "terraform destroy" to clean up your AWS environment.
 
+If you are done with the Docker container, exit and run "docker-compose down" from your lab instance. 
+
 Done ;)
