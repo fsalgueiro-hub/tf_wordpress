@@ -15,13 +15,27 @@ run docker-compose run controller bash
 
 ## You should now be in an interactive session on the docker container
 
-run ansible-galaxy collection install amazon.aws 
-edit the ~/.aws/credentials file and add your access_key, secret_key and token
+### Install ansible-galax add on for dynamic inventory
+     ansible-galaxy collection install amazon.aws 
+### Edit the aws credentials files add your access_key, secret_key and token
+vi ~/.aws/credentials 
 
-cd into tf_WordPress
-run terraform init
-run terraform plan
-run terraform apply -auto-approve
+### In the workpsace directory where the .tf file are now located in the container
+#### Initialize the terraform dir
+     terraform init
+##### Run the terraform plan
+     terraform plan -out=wordpress_plan.txt
+##### Apply the plan
+run terraform apply "wordpress_plan.txt"
 
-copy the dns name in the ouput and paste to your browser bar
+### copy the LB-DNS-NAME into your browser address bar
+From the "Outputs" at the end of the execution copy the DNS-NAME for the load balancer and paste
+into your browsers address bar.
+
+You should now see the WordPress configuration page
+
+### Destory your aws configuration
+
+Once your are done, run "terraform destroy" to clean up your AWS environment.
+
 Done ;)
