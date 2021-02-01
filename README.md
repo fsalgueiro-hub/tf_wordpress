@@ -25,7 +25,7 @@ vi ~/.aws/credentials
 ##### Run the terraform plan
      terraform plan -out=wordpress_plan.txt
 ##### Apply the plan
-    run terraform apply "wordpress_plan.txt"
+    terraform apply "wordpress_plan.txt"
 
 ### copy the LB-DNS-NAME into your browser address bar
 From the "Outputs" at the end of the execution copy the DNS-NAME for the load balancer and paste
