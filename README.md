@@ -38,7 +38,7 @@ into your browsers address bar.
 
 You should now see the WordPress configuration page
 
-### Destory your aws configuration
+### Destroy your aws configuration
 
 Once your are done, run "terraform destroy" to clean up your AWS environment.
     terraform destroy
